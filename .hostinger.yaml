@@ -1,0 +1,9 @@
+# ══════════════════════════════════════
+#   Hostinger Node.js Deployment Config
+# ══════════════════════════════════════
+
+build:
+  command: npm install && npm run build
+
+start:
+  command: node ./dist/index-hostinger.js

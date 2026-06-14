@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# ─── إعادة التوجيه لـ HTTPS ───
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ─── Proxy لتطبيق Node.js ───
+RewriteRule ^(.*)$ http://localhost:3000/$1 [P,L]
